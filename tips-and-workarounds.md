@@ -79,3 +79,14 @@ jobs:
 ```
 
 </details>
+
+
+
+
+    -name: update cache on every commit
+      uses: actions/cache@v4
+      with:
+        path: prime-numbers
+        key: primes-${{ runner.os }}-${{ github.run_id }} # Can use time based key as well
+        restore-keys: |
+          primes-${{ runner.os }}
